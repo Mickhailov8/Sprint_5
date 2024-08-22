@@ -1,23 +1,23 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from Locators import Locators
-from Constants import Constants
-from Conftest import driver
+from locators import Locators
+from constants import Constants
+from conftest import driver
 
 
 class TestConstructor:
 
     def test_constructor_to_bread(self, driver): # Переход к разделу "Булки"
-        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.Button_Bread))
-        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.Button_Bread))
+        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.BUTTON_BREAD))
+        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.BUTTON_BREAD))
 
 
     def test_constructor_to_sauce(self, driver):  # Переход к разделу "Соусы"
-        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.Button_Sauce))
-        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.Button_Sauce))
+        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.BUTTON_SAUCE))
+        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.BUTTON_SAUCE))
 
 
     def test_constructor_to_filling(self, driver):  # Переход к разделу "Начинки"
-        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.Button_Filling))
-        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.Button_Filling))
+        driver.execute_script("arguments[0].scrollIntoView();", driver.find_element(*Locators.BUTTON_FILLING))
+        assert WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(Locators.BUTTON_FILLING))
